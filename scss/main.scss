@@ -1,0 +1,12 @@
+@import "colores";
+@import "estructura";
+@import "tipografia";
+@import "grillas";
+
+.main__promo {
+    @if $promo == si {
+        display:block
+    } @else {
+        display:none;
+    }
+}

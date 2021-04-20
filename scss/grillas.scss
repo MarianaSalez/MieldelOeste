@@ -1,0 +1,71 @@
+/*INICIO*/
+/*Grid Miel Orgánica*/
+#productos{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
+}
+#productos .item{
+    border:hidden;
+    padding: 5px;
+    color:#C2A204;
+    text-align: center;
+}
+#productos .item:hover{
+    opacity: 0.5;
+}
+/*Grid Miel Orgánica*/
+
+/*Flexbox de la home para video home*/
+.contenidoHome{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:0px 5px;
+}
+
+.contenidoHome .item{
+    padding:5px;
+    margin:0px 5px;
+}
+/*Flexbox de la home para video home*/
+
+/*RECETAS*/
+.recetas {
+    padding: 3rem;
+}
+.recetas:hover{
+    transform: scale(1.05, 1.05)
+}
+
+/*NUESTROS PRODUCTOS*/
+/*Grid Nuestros Productos*/
+#nuestrosProd{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-around;
+    margin: 5px;
+}
+#nuestrosProd .item{
+    border:hidden;
+    padding: 5px;
+    text-align: center;
+}
+/*Grid Nuestros Productos*/
+
+/*ORIGEN Y COMPROMISO*/
+/*Grid de Origen y ompromiso*/
+#origen{
+    display:grid;
+    grid-template-columns:auto;
+    justify-content: space-around;
+    margin: 5px;
+}
+#origen .item{
+    border:hidden;
+    margin: 5px 20px 5px 5px;
+    text-align: center;
+}
+/*Grid de Origen y ompromiso*/

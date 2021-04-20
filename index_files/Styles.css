@@ -1,0 +1,67 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+h1 {
+    color: #F7DB4F;
+}
+
+h2{
+    color:#C2A204;
+}
+
+ul li {
+    color: #756826;
+}
+
+ol li{
+    color:#F7DB4F;
+}
+
+.slogan{
+    font-family:"Latin Modern Roman 10";
+    font-style: oblique;
+    font-size: 40px;
+}
+
+.quitarLink{
+    text-decoration: none;
+    color:#756202
+}
+
+.parrafoSimple{
+    color: #F7DB4F;
+}
+
+.fondoFooter{
+    background-color: #383004;
+    color:white;
+}
+
+.fondoHeader{
+    background-image: url(../images/apiary_header.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.75);
+}
+
+.ulMenu{
+    list-style-type: none;
+    margin: auto;
+}
+
+.ilMenu{
+    display: inline;
+    padding: 15px;
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    float: right;
+}

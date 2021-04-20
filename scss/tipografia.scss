@@ -1,0 +1,56 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main__slogan{
+    margin: 2rem; 
+    text-align: center; 
+    height:100%; 
+    color:#C2A204; 
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 3.5rem;
+}
+
+.main__slogan__pages{
+    @extend .main__slogan;
+    font-size: 2.5rem
+}
+
+.main__bajada{
+    @extend .main__slogan;
+    margin:10px 10px 50px; 
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.main__bajada__pages{
+    @extend .main__bajada;
+    text-align: center;
+}
+
+.main__parrafo{
+    @extend .main__slogan;
+    font-size: 1.25rem;
+}
+
+.main__promo{
+    @extend.main__slogan;
+    padding: 2rem 0;
+    height: auto;
+    background-color: $miel;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.bajada{
+    @extend .main__slogan;
+    font-family: 'Sacramento', cursive;
+    font-size: 2.3rem;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.nav__font{
+    font-weight: bold;
+}

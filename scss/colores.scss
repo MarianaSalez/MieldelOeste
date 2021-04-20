@@ -1,0 +1,36 @@
+$miel: #F7DB4F;
+
+h1 {
+    color: $miel;
+}
+
+h2 {
+    color: #756826; 
+    ; 
+}
+
+ul {
+    li {
+        color: #756826; 
+    }
+}
+
+ol {
+    li {
+        color: #756826; 
+        ;
+    } 
+}
+
+.parrafoSimple{
+    color: $miel;
+}
+
+.imagen {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
