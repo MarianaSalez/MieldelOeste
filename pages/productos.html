@@ -25,6 +25,8 @@
 <body>
     <header class="header__fondo-pages">
         <a name="arriba"></a>
+<div class="container row">
+    <div class="container col-10">
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:transparent;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +53,29 @@
                 </ul>
             </div>
         </nav>
-        <div>
+    <div class="col-10">
             <a href="../index.html"><img src="../images/logo-miel-del-oeste_sin-fondo.png" class="header__logo-pages"
                     alt="logo_abeja"></a>
+    </div>
+
+</div>
+    <div class="col-2 align-middle">
+    <form class="form-text" id="myUser">
+        <input id="usuario"  type="text" placeholder="Ingrese usuario">
+        <br>
+        <input id="password"  type="password" placeholder="Ingrese contraseña">
+        <br>
+        <div class="row">
+            <button id="login" class="botonEnviar  form-text">Login </button>
+            <br>
+            <button id="signout" class="botonEnviar form-text">signout </button>
         </div>
+        
+    </form>
+</div>
+</div>
+
+
     </header>
 
 <section id="paginappal">
@@ -174,9 +195,14 @@
                 </div>
             </section>
         </section>
-<section id="carrito"  style="background-color: #dab80def;">
+<section style="background-color: #dab80def;">
     <a name="carrito"></a>
-<h2>Mi carrito</h2>
+<div id="carrito" class="container">
+    <hr>
+    <h2>Mi carrito</h2>
+
+</div>
+
 </section>
 <section id="fotter" style="background-color:#554701; margin-top: 3rem;">
         <div class="container">
@@ -222,10 +248,10 @@
 
 <!--Script propios-->
 
-<script src="../js/funciones.js"></script>
+<script src="../js/my_User_Profile.js"></script>
 <script src="../js/carrito.js"></script>
-<scrip src="../js/main.js"></scrip>
 
+<!--Script de librerias-->
     <scrip src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></scrip>
@@ -235,15 +261,6 @@
     <scrip src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></scrip>
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-
-        $(function () {
-            $('[data-toggle="popover"]').popover()
-        })
-    </script>
 </body>
 
 </html>
