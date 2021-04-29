@@ -31,10 +31,11 @@ console.log("Los porudcots disponibles son: ")
 console.log(JSON.stringify(mieles))
 
 
-//Generación de carrito de compra en DOM
-let cantidad=0
-let carrito=document.getElementById("carrito")
-    for (const elemento of mieles) {
+//Declaración de funciones
+
+function crearArrayDom(IdLocacion,array) {
+    let carrito=document.getElementById(IdLocacion)
+    for (const elemento of array) {
         let card= document.createElement("div")
         card.innerHTML = `<form class="container d-flex align:center" id="myCarrito${elemento.id}">
         <hr>
@@ -48,24 +49,31 @@ let carrito=document.getElementById("carrito")
 ;
 carrito.appendChild(card)
     } 
+}
 
-//Generaion de boton de compra
-let compra = document.createElement("button");
-compra.innerHTML=`<p>Compra</p>`
-    compra.onclick=()=>{
-        calculo()
-        console.log ("Calculo de compra realizado")}
-carrito.appendChild(compra)
 
-//Compra final por pantalla
-let saldonFinal=document.getElementById("carrito")
+
+function crearBoton(idLocacion,textoBoton,funcionBoton,impresionPorConsola){
+    let lugar=document.getElementById(idLocacion)
+    let compra = document.createElement("div");
+    compra.innerHTML=`<button>${textoBoton}</button>`
+        compra.onclick=()=>{
+            funcionBoton()
+            console.log (impresionPorConsola)}
+    lugar.appendChild(compra)}
+
+
+
+function crearDom(idLocacion,html) {
+    let saldonFinal=document.getElementById(idLocacion)
     let saldo=document.createElement("div")
-    saldo.innerHTML=`
-    <div class="text-right"><h4>El total hasta ahora es: </h4><input id="valorCompra"></input><hr>
-    </div>`
+    saldo.innerHTML=`${html}`
 saldonFinal.appendChild(saldo)
 
-//funcion de calculo del valor de compra total
+}
+
+
+
 function calculo(){
     let pradera= document.getElementById("cantidadpradera").value
     let algarrobo= document.getElementById("cantidadalgarrobo").value
@@ -80,6 +88,21 @@ panal*mielPanal.precio)
 console.log(subtotal)
 document.getElementById("valorCompra").value=subtotal
 }
+
+
+
+//Generación de carrito de compra en DOM
+crearArrayDom("carrito",mieles)
+//Boton de compra
+crearBoton("carrito","Comprar",calculo,"Calculo de compra realizado")
+//Creacion del DOM final
+crearDom("carrito",`<div class="text-right"><h4>El total hasta ahora es: </h4><input id=valorCompra></><hr>
+</div>`)
+
+
+
+
+
 
 
 
