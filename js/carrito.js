@@ -34,10 +34,8 @@ console.log(JSON.stringify(mieles))
 //Declaración de funciones
 
 function crearArrayDom(IdLocacion,array) {
-    let carrito=document.getElementById(IdLocacion)
     for (const elemento of array) {
-        let card= document.createElement("div")
-        card.innerHTML = `<form class="container d-flex align:center" id="myCarrito${elemento.id}">
+        $(IdLocacion).append(`<form class="container d-flex align:center" id="myCarrito${elemento.id}">
         <hr>
         <h3> ${elemento.nombre}</h3>
         <hr>
@@ -45,40 +43,32 @@ function crearArrayDom(IdLocacion,array) {
         <hr>
         <p> $ (${elemento.precio})</p>
 </form>
-<br>`
-;
-carrito.appendChild(card)
-    } 
-}
+<br>`)
+    }}
 
 
 
-function crearBoton(idLocacion,textoBoton,funcionBoton,impresionPorConsola){
-    let lugar=document.getElementById(idLocacion)
-    let compra = document.createElement("div");
-    compra.innerHTML=`<button>${textoBoton}</button>`
-        compra.onclick=()=>{
-            funcionBoton()
-            console.log (impresionPorConsola)}
-    lugar.appendChild(compra)}
-
-
+function crearBoton(idLocacion,textoBoton){
+    $(`${idLocacion}`).append(`<button id="${textoBoton}">${textoBoton}</button>`)}
+        
 
 function crearDom(idLocacion,html) {
-    let saldonFinal=document.getElementById(idLocacion)
-    let saldo=document.createElement("div")
-    saldo.innerHTML=`${html}`
-saldonFinal.appendChild(saldo)
-
-}
+    $(`${idLocacion}`).append(`${html}`)}
 
 
+//Generación de carrito de compra en DOM
+crearArrayDom("#carrito",mieles)
 
-function calculo(){
-    let pradera= document.getElementById("cantidadpradera").value
-    let algarrobo= document.getElementById("cantidadalgarrobo").value
-    let arrope= document.getElementById("cantidadarrope").value
-    let panal= document.getElementById("cantidadpanal").value
+//Boton de compra
+
+crearBoton("#carrito","comprar")
+
+//Evento asociado a boton de compra
+$("#comprar").click(function calculo(){
+    let pradera= $("#cantidadpradera").val()
+    let algarrobo= $("#cantidadalgarrobo").val()
+    let arrope= $("#cantidadarrope").val()
+    let panal= $("#cantidadpanal").val()
 
 const subtotal=(pradera*mielPradera.precio+
 algarrobo*mielAlgarrobo.precio+
@@ -86,24 +76,10 @@ arrope*arropeMiel.precio+
 panal*mielPanal.precio)
 
 console.log(subtotal)
-document.getElementById("valorCompra").value=subtotal
-}
+$("#valorCompra").val(subtotal)
+console.log("Calculo de compra realizado")})
 
 
 
-//Generación de carrito de compra en DOM
-crearArrayDom("carrito",mieles)
-//Boton de compra
-crearBoton("carrito","Comprar",calculo,"Calculo de compra realizado")
-//Creacion del DOM final
-crearDom("carrito",`<div class="text-right"><h4>El total hasta ahora es: </h4><input id=valorCompra></><hr>
+crearDom("#carrito",`<div class="text-right"><h4>El total hasta ahora es: </h4><input id=valorCompra></><hr>
 </div>`)
-
-
-
-
-
-
-
-
-
