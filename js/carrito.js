@@ -79,7 +79,5 @@ console.log(subtotal)
 $("#valorCompra").val(subtotal)
 console.log("Calculo de compra realizado")})
 
-
-
 crearDom("#carrito",`<div class="text-right"><h4>El total hasta ahora es: </h4><input id=valorCompra></><hr>
 </div>`)
