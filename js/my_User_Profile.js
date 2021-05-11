@@ -1,4 +1,5 @@
 //Capturo la información del usuario y la guardo
+
 $("#myUser").submit(function validate(event){
     event.preventDefault()
     let usuario=$("#usuario").val()
@@ -21,16 +22,16 @@ $("#signout").click(function limpiar(){
     $("#password").val("")
     console.log("Sesión cerrada")})
 
-crearDom("header",`<container style="display:none">
-<div class="col-4"></div>
-<div id="saludo" style=z-index:2 class="col-4"><h4>Bienvenido ${$(usuario).val()}</h4>
-    </div>
-<div class="col-4"></div>
-</container>`)
+
+crearDom("#lugarSaludo",`
+    <div id="saludo" style="display:none"  style=z-index:2 class="text-center"><card>Bienvenido ${localStorage.getItem("savedUser",[0])}</card>
+        </div>`)
 
 $("#login").click(()=>{
-$("#saludo").css("background-color","color:#756202")
-            .fadeIn(1500)
-            .delay(2500)
-            .fadeOut("fast")
+    $("#saludo").css({"display":"block"})
+            //.css("background-color","color:#756202")
     })
+
+    $("#login").click(()=>{$("#saludo").fadeIn()
+    .delay()
+    .fadeOut()})

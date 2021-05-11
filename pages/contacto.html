@@ -66,33 +66,33 @@
                     <div class="form-row">
                         <div class="col-md-6 mb-2">
                             <label for="validationDefault01">Nombre</label>
-                            <input type="text" class="form-control" id="validationDefault01" placeholder="Abeja"
+                            <input id="cName" type="text" class="form-control" id="validationDefault01" placeholder="Abeja"
                                 required>
                         </div>
                         <div class="col-md-6 mb-2">
-                            <label for="validationDefault02">Apellido</label>
-                            <input type="text" class="form-control" id="validationDefault02" placeholder="Quiroga"
+                            <label  for="validationDefault02">Apellido</label>
+                            <input  id="cSurname" type="text" class="form-control" id="validationDefault02" placeholder="Quiroga"
                                 required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-6 mb-2">
-                            <label for="validationDefault03">Teléfono</label>
-                            <input type="text" class="form-control" id="validationDefault03"
+                            <label  for="validationDefault03">Teléfono</label>
+                            <input id="cPhone" type="text" class="form-control" id="validationDefault03"
                                 placeholder="+54 9 351 3221100" required>
                         </div>
                         <div class="col-md-6 mb-2">
-                            <label for="validationDefaultUsername">Correo</label>
+                            <label  for="validationDefaultUsername">Correo</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroupPrepend2">@</span>
                                 </div>
-                                <input type="text" class="form-control" id="validationDefaultUsername"
+                                <input id="cMail" type="text" class="form-control" id="validationDefaultUsername"
                                     placeholder="abeja@quiroga.com" aria-describedby="inputGroupPrepend2" required>
                             </div>
                         </div>
                     </div>
-                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Consulta</label>
+                    <label  class="my-1 mr-2" for="inlineFormCustomSelectPref">Consulta</label>
                     <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                         <option selected>Elegí una opción</option>
                         <option value="1">Quiero comprar</option>
@@ -101,7 +101,7 @@
                     </select>
 
                     <div class="input-group" style="padding:0.5rem 0px">
-                        <textarea class="form-control" aria-label="With textarea" placeholder="Dejanos tu comentario :)"
+                        <textarea id="cMessage" class="form-control" aria-label="With textarea" placeholder="Dejanos tu comentario :)"
                             required></textarea>
                     </div>
 
@@ -113,7 +113,7 @@
                             </label>
                         </div>
                     </div>
-                    <button class="boton botonEnviar" type="submit">Enviar</button>
+                    <button id="cSent"class="boton botonEnviar" type="submit">Enviar</button>
                 </form>
             </div>
         </div>
@@ -163,9 +163,13 @@
         </div>
 </section>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+<script
+src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"></script>
+
+<script src="../js/formulario.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
