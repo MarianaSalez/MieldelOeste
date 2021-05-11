@@ -33,5 +33,5 @@ $("#login").click(()=>{
     })
 
     $("#login").click(()=>{$("#saludo").fadeIn()
-    .delay()
+    .delay(1500)
     .fadeOut()})
