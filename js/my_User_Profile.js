@@ -11,8 +11,10 @@ $("#myUser").submit(function validate(event){
 crearBoton("#login","login")
 $("#login").click(function save() {
     const usuario1=[$("#usuario").val(), $("#password").val()]
-    let usuarioguardado=localStorage.setItem("savedUser",usuario1)
-    console.log(localStorage.getItem("savedUser"))})
+    let usuarioguardado=localStorage.setItem("LastUser",usuario1)
+    crearDom("#lugarSaludo",`
+    <div id="saludo" style="display:none"  style=z-index:2 class="text-center"><card>Bienvenido ${usuario1[0]}</card>
+        </div>`)})
 
 
 crearBoton("#signout","signout")
@@ -23,9 +25,7 @@ $("#signout").click(function limpiar(){
     console.log("Sesión cerrada")})
 
 
-crearDom("#lugarSaludo",`
-    <div id="saludo" style="display:none"  style=z-index:2 class="text-center"><card>Bienvenido ${localStorage.getItem("savedUser",[0])}</card>
-        </div>`)
+
 
 $("#login").click(()=>{
     $("#saludo").css({"display":"block"})
