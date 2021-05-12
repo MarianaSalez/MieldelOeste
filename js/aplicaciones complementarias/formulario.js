@@ -9,11 +9,11 @@ $("#cSent").click(function validate(event){
     let mensaje=$("#cMessage").val()
     const consulta=[nombre, apellido, telefono,correo,mensaje];
     console.log(consulta)
-    $.post(URLJSON, consulta,
+    {$.post(URLJSON, consulta,
         function(respuesta, estado) {
         if(estado==="success"){
             let lastConsult=localStorage.setItem("lastconsult",(respuesta))
             console.log(lastConsult)
             alert("Se ha enviado su formulario con exito, gracias!")}
-        },);
-})
+        })}
+});
