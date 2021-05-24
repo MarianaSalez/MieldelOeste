@@ -1,7 +1,7 @@
 
 //Funciónes de para crear elementos en DOM
 
-//Funcion para crear Dom
+//Función para crear Dom
 export function crearDom(idLocacion,lugar,html) {
     if(lugar==="append"){
         $(`${idLocacion}`).append(`${html}`)}

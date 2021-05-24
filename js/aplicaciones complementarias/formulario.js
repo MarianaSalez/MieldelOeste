@@ -1,5 +1,7 @@
+//Declaración del servidor donde se guardara la información
 const URLJSON="https://jsonplaceholder.typicode.com/posts"
 
+//Guardado de datos y publicación de los mismos
 $("#cSent").click(function validate(event){
     event.preventDefault()
     let nombre=$("#cName").val()
@@ -14,6 +16,7 @@ $("#cSent").click(function validate(event){
         if(estado==="success"){
             let lastConsult=localStorage.setItem("lastconsult",(respuesta))
             console.log(lastConsult)
-            alert("Se ha enviado su formulario con exito, gracias!")}
+            alert("Se ha enviado su formulario con éxito, gracias!")}
+        else {console.log ("No se ha podido enviar su formulario, intente mas tarde nuevamente")}
         })}
 });

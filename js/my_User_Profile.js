@@ -1,35 +1,42 @@
 import {crearBoton,crearDom} from './datosBase/funciones.js'
-//Capturo la información del usuario y la guardo
-
+//Prevengo la recarga de la pagina con enter
 $("#myUser").submit(function validate(event){
-    event.preventDefault()
-    let usuario=$("#usuario").val()
-    let password=$("#password").val()
-    const usuario1=[usuario, password]
-    console.log(usuario1)});
+    event.preventDefault()});
 
-//Guardo la informacion y aviso al usuario
+//Guardo la información y aviso al usuario
+let usuarioguardado=localStorage.setItem("LastUser","")
+
 crearBoton("#login","login")
 $("#login").click(function save() {
     const usuario1=[$("#usuario").val(), $("#password").val()]
-    let usuarioguardado=localStorage.setItem("LastUser",usuario1)
-    crearDom("#lugarSaludo","append",`<div id="saludo" style="display:none"  style=z-index:2 class="text-center"><card id="cardSaludo">Bienvenido ${usuario1[0]}</card>
-        </div>`)});
+    console.log(usuario1)
+        if (localStorage.getItem("LastUser")===""){
+            let usuarioguardado=localStorage.setItem("LastUser",usuario1[0])
+        }
+        else if (localStorage.getItem("LastUser")=== usuario1[0]) {
+            console.log("Ya se encuentra iniciada sesión")
+            
+        } else {
+            crearDom("#lugarSaludo","append",`<div id="saludo" style="display:none"  style=z-index:2 class="text-center"><card id="cardSaludo">Bienvenido ${usuario1[0]}</card>
+        </div>`)};
+        })
+        
+    
+//Evento para saludo al click del login
+$("#login").click(()=>{
+    $("#saludo:last-child")
+        .fadeIn()
+        .delay(1200)
+        .fadeOut("slow")});
+        
 
-//Boton para borrar la informacion
+//Botón para borrar la información y avisa al usuario que se ha cerrado sesión
 crearBoton("#signout","signout")
 $("#signout").click(function limpiar(){
     localStorage.clear()
+    $("#saludo:first-Child").remove()
     $("#usuario").val("")
     $("#password").val("")
     console.log("Sesión cerrada")});
 
-$("#login").click(()=>{
-    $("#saludo").css({"display":"block"})
-    $("#cardSaludo").css("background-color","color:red")
-    })
-
-    $("#login").click(()=>{$("#saludo").fadeIn()
-    .delay(1000)
-    .fadeOut("slow")});
 
