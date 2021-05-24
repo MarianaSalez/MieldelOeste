@@ -12,6 +12,8 @@ $("#login").click(function save() {
     console.log(usuario1)
         if (localStorage.getItem("LastUser")===""){
             let usuarioguardado=localStorage.setItem("LastUser",usuario1[0])
+            crearDom("#lugarSaludo","append",`<div id="saludo" style="display:none"  style=z-index:2 class="text-center"><card id="cardSaludo">Bienvenido ${usuario1[0]}</card>
+            </div>`)
         }
         else if (localStorage.getItem("LastUser")=== usuario1[0]) {
             console.log("Ya se encuentra iniciada sesión")
