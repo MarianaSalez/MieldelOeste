@@ -2,7 +2,7 @@
 const URLJSON="https://jsonplaceholder.typicode.com/posts"
 
 //Guardado de datos y publicación de los mismos
-$("#cSent").click(function validate(event){
+$("#cSent").click( async function validate(event){
     event.preventDefault()
     let nombre=$("#cName").val()
     let apellido=$("#cSurname").val()
